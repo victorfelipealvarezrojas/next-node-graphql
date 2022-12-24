@@ -4,13 +4,6 @@ import { typeDefs, resolvers } from './db';
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context: ()=>{
-        const contexto="valor contexto global"
-
-        return {
-            contexto
-        }
-    }
 })
 
 server.listen().then(({ url }) => {

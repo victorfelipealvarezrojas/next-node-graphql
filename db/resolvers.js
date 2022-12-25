@@ -1,6 +1,6 @@
 
 export const resolvers = {
     Query: {
-        obtenetCurso: ()=> 'no implementada'
+        obtenetCurso: () => 'no implementada'
     }
 }

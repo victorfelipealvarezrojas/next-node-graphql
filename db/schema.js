@@ -2,7 +2,7 @@ import { gql } from 'apollo-server'
 
 //schema
 export const typeDefs = gql`
-     type Usuario :{
+     type Usuario {
         id: ID,
         nombre: String,
         apellido: String,

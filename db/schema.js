@@ -9,8 +9,19 @@ export const typeDefs = gql`
         email: String,
         creado: String,
      }
+
+     input UsuarioInput {
+        nombre: String!,
+        apellido: String!,
+        email: String!,
+        password: String!,
+     } 
+
      type Query {
         obtenetCurso: String
+     } 
+
+     type Mutation {
+        nuevoUsuario(input: UsuarioInput): Usuario
      }
 `;
-

@@ -8,3 +8,12 @@ export async function hash(hash, password) {
         throw new Error(error)
     }
 }
+
+export async function compare(password, passwordRegister) {
+    try {
+        return await bcryptjs.compare(password, passwordRegister)
+    } catch (error) {
+        throw new Error(error)
+    }
+}
+

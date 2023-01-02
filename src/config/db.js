@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import * as dotenv from 'dotenv'
-dotenv.config()
+dotenv.config({ path: './config/.env' })
 
 
 export class DBConnection {
@@ -16,10 +16,4 @@ export class DBConnection {
     disconnect() {
         return this.client.close();
     }
-}
-
-
-
-const a = () => {
-    
 }

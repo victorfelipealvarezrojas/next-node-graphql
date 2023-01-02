@@ -1,10 +1,10 @@
-import { findOneEmail, save } from '../services'
-import { hash, compare, createToken, verify } from '../common'
+import { findOneEmail, save } from '../../services'
+import { hash, compare, createToken, verify } from '../../common'
 
 const ROUNDS = 10
 const TIME = '24h'
 
-export const resolvers = {
+export const resolversUsers = {
     Query: {
         obtenerUsuario: async (_, { token }) => {
             const JwtUser = await verify(token, process.env.SECRET_KEY)
@@ -12,7 +12,7 @@ export const resolvers = {
         }
     },
     Mutation: {
-        nuevoUsuario: async (_, { token }) => {
+        nuevoUsuario: async (_, { input }) => {
             const { email, password } = input
             const existeUsuario = await findOneEmail(email)
 
@@ -37,7 +37,6 @@ export const resolvers = {
             return {
                 token: createToken(usuario, process.env.SECRET_KEY, TIME)
             }
-
         },
 
     }

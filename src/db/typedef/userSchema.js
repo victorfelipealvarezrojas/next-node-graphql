@@ -1,7 +1,7 @@
 import { gql } from 'apollo-server'
 
 //schema
-export const typeDefs = gql`
+export const typeDefsUsers = gql`
      type Usuario {
         id: ID
         nombre: String
